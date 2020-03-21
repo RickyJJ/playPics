@@ -1,5 +1,9 @@
 build
 .rpt2_cache
-bin
 .laya
 bin/js
+bin/libs
+bin/prefab
+bin/res
+bin/sound
+bin/test
