@@ -78,7 +78,7 @@ export default class GameUI extends ui.test.TestSceneUI {
 
         // Laya.stage.bgColor = '#ff99ff'
 
-        this.playMusic()
+        this.playMusic(1)
     }
 
     onEnable(): void {
@@ -92,8 +92,15 @@ export default class GameUI extends ui.test.TestSceneUI {
         this.firstStage()
     }
 
-    playMusic(): any {
-        SoundManager.playMusic("sound/background.mp3", 0)
+    playMusic(index: number): any {
+        let music: string
+        if (index == 1) {
+            music = "sound/background_starter.mp3"
+        } else {
+            music = "sound/background.mp3"
+        }
+
+        SoundManager.playMusic(music, 0)
     }
 
     initSaying() {
@@ -224,6 +231,7 @@ export default class GameUI extends ui.test.TestSceneUI {
         this.clearSaying()
         this.question.width = Laya.stage.width
         this.question.pos(0, 0)
+        this.playMusic(2)
         // this.question.height = Laya.stage.height
         this.springStage()
     }
