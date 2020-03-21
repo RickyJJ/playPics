@@ -1,7 +1,0 @@
-{
-  "code": "import { Pool } from \"../../utils/Pool\";\r\nexport class SaveCmd {\r\n    static create() {\r\n        var cmd = Pool.getItemByClass(\"SaveCmd\", SaveCmd);\r\n        return cmd;\r\n    }\r\n    recover() {\r\n        Pool.recover(\"SaveCmd\", this);\r\n    }\r\n    run(context, gx, gy) {\r\n        context.save();\r\n    }\r\n    get cmdID() {\r\n        return SaveCmd.ID;\r\n    }\r\n}\r\nSaveCmd.ID = \"Save\";\r\n",
-  "references": [
-    "D:/MySpace/Projects/NextPresent/PresentNext/libs/laya/resource/Context.ts",
-    "D:/MySpace/Projects/NextPresent/PresentNext/libs/laya/utils/Pool.ts"
-  ]
-}

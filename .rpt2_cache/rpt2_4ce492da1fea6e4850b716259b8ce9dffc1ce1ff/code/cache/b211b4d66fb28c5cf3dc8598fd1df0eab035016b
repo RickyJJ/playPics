@@ -1,7 +1,0 @@
-{
-  "code": "import { Pool } from \"../../utils/Pool\";\r\nexport class DrawCircleCmd {\r\n    static create(x, y, radius, fillColor, lineColor, lineWidth, vid) {\r\n        var cmd = Pool.getItemByClass(\"DrawCircleCmd\", DrawCircleCmd);\r\n        cmd.x = x;\r\n        cmd.y = y;\r\n        cmd.radius = radius;\r\n        cmd.fillColor = fillColor;\r\n        cmd.lineColor = lineColor;\r\n        cmd.lineWidth = lineWidth;\r\n        cmd.vid = vid;\r\n        return cmd;\r\n    }\r\n    recover() {\r\n        this.fillColor = null;\r\n        this.lineColor = null;\r\n        Pool.recover(\"DrawCircleCmd\", this);\r\n    }\r\n    run(context, gx, gy) {\r\n        context._drawCircle(this.x + gx, this.y + gy, this.radius, this.fillColor, this.lineColor, this.lineWidth, this.vid);\r\n    }\r\n    get cmdID() {\r\n        return DrawCircleCmd.ID;\r\n    }\r\n}\r\nDrawCircleCmd.ID = \"DrawCircle\";\r\n",
-  "references": [
-    "D:/MySpace/Projects/NextPresent/PresentNext/libs/laya/resource/Context.ts",
-    "D:/MySpace/Projects/NextPresent/PresentNext/libs/laya/utils/Pool.ts"
-  ]
-}

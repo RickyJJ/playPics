@@ -1,6 +1,0 @@
-{
-  "code": "import { Resource } from \"../../resource/Resource\";\r\nexport class BaseShader extends Resource {\r\n    constructor() {\r\n        super();\r\n    }\r\n}\r\n",
-  "references": [
-    "D:/MySpace/Projects/NextPresent/PresentNext/libs/laya/resource/Resource.ts"
-  ]
-}

@@ -1,6 +1,0 @@
-{
-  "code": "export default class SayingVO {\r\n    constructor(text, point, picPath, isTogglePic) {\r\n        this.text = text;\r\n        this.point = point;\r\n        this.picPath = picPath;\r\n        this.isTogglePic = isTogglePic;\r\n    }\r\n}\r\n",
-  "references": [
-    "D:/MySpace/Projects/NextPresent/PresentNext/libs/laya/maths/Point.ts"
-  ]
-}

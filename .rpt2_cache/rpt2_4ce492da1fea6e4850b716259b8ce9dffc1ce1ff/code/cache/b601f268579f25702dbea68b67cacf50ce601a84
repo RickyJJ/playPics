@@ -1,6 +1,0 @@
-{
-  "code": "export class Stat {\r\n    static show(x = 0, y = 0) {\r\n        Stat._StatRender.show(x, y);\r\n    }\r\n    static enable() {\r\n        Stat._StatRender.enable();\r\n    }\r\n    static hide() {\r\n        Stat._StatRender.hide();\r\n    }\r\n    static clear() {\r\n        Stat.trianglesFaces = Stat.renderBatches = Stat.savedRenderBatches = Stat.shaderCall = Stat.spriteRenderUseCacheCount = Stat.frustumCulling = Stat.octreeNodeCulling = Stat.canvasNormal = Stat.canvasBitmap = Stat.canvasReCache = 0;\r\n    }\r\n    static set onclick(fn) {\r\n        Stat._StatRender.set_onclick(fn);\r\n    }\r\n}\r\nStat.FPS = 0;\r\nStat.loopCount = 0;\r\nStat.shaderCall = 0;\r\nStat.renderBatches = 0;\r\nStat.savedRenderBatches = 0;\r\nStat.trianglesFaces = 0;\r\nStat.spriteCount = 0;\r\nStat.spriteRenderUseCacheCount = 0;\r\nStat.frustumCulling = 0;\r\nStat.octreeNodeCulling = 0;\r\nStat.canvasNormal = 0;\r\nStat.canvasBitmap = 0;\r\nStat.canvasReCache = 0;\r\nStat.renderSlow = false;\r\nStat._fpsData = [];\r\nStat._timer = 0;\r\nStat._count = 0;\r\nStat._StatRender = null;\r\n",
-  "references": [
-    "D:/MySpace/Projects/NextPresent/PresentNext/libs/laya/utils/IStatRender.ts"
-  ]
-}

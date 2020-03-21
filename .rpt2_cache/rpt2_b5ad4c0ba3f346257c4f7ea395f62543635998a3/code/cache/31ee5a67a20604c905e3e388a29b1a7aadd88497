@@ -1,4 +1,0 @@
-{
-  "code": "export class EarcutNode {\r\n    constructor(i, x, y) {\r\n        this.i = i;\r\n        this.x = x;\r\n        this.y = y;\r\n        this.prev = null;\r\n        this.next = null;\r\n        this.z = null;\r\n        this.prevZ = null;\r\n        this.nextZ = null;\r\n        this.steiner = false;\r\n    }\r\n}\r\n",
-  "references": []
-}

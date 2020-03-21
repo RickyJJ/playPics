@@ -1,7 +1,0 @@
-{
-  "code": "import { Pool } from \"../../utils/Pool\";\r\nexport class ClipRectCmd {\r\n    static create(x, y, width, height) {\r\n        var cmd = Pool.getItemByClass(\"ClipRectCmd\", ClipRectCmd);\r\n        cmd.x = x;\r\n        cmd.y = y;\r\n        cmd.width = width;\r\n        cmd.height = height;\r\n        return cmd;\r\n    }\r\n    recover() {\r\n        Pool.recover(\"ClipRectCmd\", this);\r\n    }\r\n    run(context, gx, gy) {\r\n        context.clipRect(this.x + gx, this.y + gy, this.width, this.height);\r\n    }\r\n    get cmdID() {\r\n        return ClipRectCmd.ID;\r\n    }\r\n}\r\nClipRectCmd.ID = \"ClipRect\";\r\n",
-  "references": [
-    "D:/MySpace/Projects/NextPresent/PresentNext/libs/laya/resource/Context.ts",
-    "D:/MySpace/Projects/NextPresent/PresentNext/libs/laya/utils/Pool.ts"
-  ]
-}

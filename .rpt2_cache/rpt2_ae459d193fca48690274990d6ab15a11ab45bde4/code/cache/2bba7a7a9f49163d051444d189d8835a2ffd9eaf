@@ -1,6 +1,0 @@
-{
-  "code": "import { RenderInfo } from \"../../renders/RenderInfo\";\r\nexport class CharRenderInfo {\r\n    constructor() {\r\n        this.char = '';\r\n        this.deleted = false;\r\n        this.uv = new Array(8);\r\n        this.pos = 0;\r\n        this.orix = 0;\r\n        this.oriy = 0;\r\n        this.touchTick = 0;\r\n        this.isSpace = false;\r\n    }\r\n    touch() {\r\n        var curLoop = RenderInfo.loopCount;\r\n        if (this.touchTick != curLoop) {\r\n            this.tex.touchRect(this, curLoop);\r\n        }\r\n        this.touchTick = curLoop;\r\n    }\r\n}\r\n",
-  "references": [
-    "D:/MySpace/Projects/NextPresent/PresentNext/libs/laya/renders/RenderInfo.ts"
-  ]
-}

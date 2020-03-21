@@ -1,7 +1,0 @@
-{
-  "code": "import { SubmitKey } from \"./SubmitKey\";\r\nexport class SubmitCMD {\r\n    constructor() {\r\n        this._ref = 1;\r\n        this._key = new SubmitKey();\r\n    }\r\n    renderSubmit() {\r\n        this.fun.apply(this._this, this.args);\r\n        return 1;\r\n    }\r\n    getRenderType() {\r\n        return 0;\r\n    }\r\n    releaseRender() {\r\n        if ((--this._ref) < 1) {\r\n            var pool = SubmitCMD.POOL;\r\n            pool[pool._length++] = this;\r\n        }\r\n    }\r\n    static create(args, fun, thisobj) {\r\n        var o = SubmitCMD.POOL._length ? SubmitCMD.POOL[--SubmitCMD.POOL._length] : new SubmitCMD();\r\n        o.fun = fun;\r\n        o.args = args;\r\n        o._this = thisobj;\r\n        o._ref = 1;\r\n        o._key.clear();\r\n        return o;\r\n    }\r\n}\r\nSubmitCMD.POOL = [];\r\n{\r\n    SubmitCMD.POOL._length = 0;\r\n}\r\n",
-  "references": [
-    "D:/MySpace/Projects/NextPresent/PresentNext/libs/laya/webgl/submit/ISubmit.ts",
-    "D:/MySpace/Projects/NextPresent/PresentNext/libs/laya/webgl/submit/SubmitKey.ts"
-  ]
-}

@@ -1,4 +1,0 @@
-{
-  "code": "export class Config {\r\n}\r\nConfig.animationInterval = 50;\r\nConfig.isAntialias = false;\r\nConfig.isAlpha = false;\r\nConfig.premultipliedAlpha = true;\r\nConfig.isStencil = true;\r\nConfig.preserveDrawingBuffer = false;\r\nConfig.webGL2D_MeshAllocMaxMem = true;\r\nConfig.is2DPixelArtGame = false;\r\nConfig.useWebGL2 = true;\r\nConfig.useRetinalCanvas = false;\r\nwindow.Config = Config;\r\n",
-  "references": []
-}

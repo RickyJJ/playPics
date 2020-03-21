@@ -1,4 +1,0 @@
-{
-  "code": "export class Mouse {\r\n    static set cursor(cursorStr) {\r\n        Mouse._style.cursor = cursorStr;\r\n    }\r\n    static get cursor() {\r\n        return Mouse._style.cursor;\r\n    }\r\n    static __init__() {\r\n    }\r\n    static hide() {\r\n        if (Mouse.cursor != \"none\") {\r\n            Mouse._preCursor = Mouse.cursor;\r\n            Mouse.cursor = \"none\";\r\n        }\r\n    }\r\n    static show() {\r\n        if (Mouse.cursor == \"none\") {\r\n            if (Mouse._preCursor) {\r\n                Mouse.cursor = Mouse._preCursor;\r\n            }\r\n            else {\r\n                Mouse.cursor = \"auto\";\r\n            }\r\n        }\r\n    }\r\n}\r\n",
-  "references": []
-}

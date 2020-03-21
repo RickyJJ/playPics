@@ -1,7 +1,0 @@
-{
-  "code": "import { Pool } from \"../../utils/Pool\";\r\nexport class DrawPolyCmd {\r\n    static create(x, y, points, fillColor, lineColor, lineWidth, isConvexPolygon, vid) {\r\n        var cmd = Pool.getItemByClass(\"DrawPolyCmd\", DrawPolyCmd);\r\n        cmd.x = x;\r\n        cmd.y = y;\r\n        cmd.points = points;\r\n        cmd.fillColor = fillColor;\r\n        cmd.lineColor = lineColor;\r\n        cmd.lineWidth = lineWidth;\r\n        cmd.isConvexPolygon = isConvexPolygon;\r\n        cmd.vid = vid;\r\n        return cmd;\r\n    }\r\n    recover() {\r\n        this.points = null;\r\n        this.fillColor = null;\r\n        this.lineColor = null;\r\n        Pool.recover(\"DrawPolyCmd\", this);\r\n    }\r\n    run(context, gx, gy) {\r\n        this.points && context._drawPoly(this.x + gx, this.y + gy, this.points, this.fillColor, this.lineColor, this.lineWidth, this.isConvexPolygon, this.vid);\r\n    }\r\n    get cmdID() {\r\n        return DrawPolyCmd.ID;\r\n    }\r\n}\r\nDrawPolyCmd.ID = \"DrawPoly\";\r\n",
-  "references": [
-    "D:/MySpace/Projects/NextPresent/PresentNext/libs/laya/resource/Context.ts",
-    "D:/MySpace/Projects/NextPresent/PresentNext/libs/laya/utils/Pool.ts"
-  ]
-}

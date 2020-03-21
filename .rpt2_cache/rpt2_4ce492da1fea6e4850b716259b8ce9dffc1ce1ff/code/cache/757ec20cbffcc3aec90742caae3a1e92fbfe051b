@@ -1,8 +1,0 @@
-{
-  "code": "import { Bitmap } from \"./Bitmap\";\r\nimport { Texture2D } from \"./Texture2D\";\r\nimport { BaseTexture } from \"./BaseTexture\";\r\nexport class HTMLImage extends Bitmap {\r\n}\r\nHTMLImage.create = function (width, height, format) {\r\n    var tex = new Texture2D(width, height, format, false, false);\r\n    tex.wrapModeU = BaseTexture.WARPMODE_CLAMP;\r\n    tex.wrapModeV = BaseTexture.WARPMODE_CLAMP;\r\n    return tex;\r\n};\r\n",
-  "references": [
-    "D:/MySpace/Projects/NextPresent/PresentNext/libs/laya/resource/Bitmap.ts",
-    "D:/MySpace/Projects/NextPresent/PresentNext/libs/laya/resource/Texture2D.ts",
-    "D:/MySpace/Projects/NextPresent/PresentNext/libs/laya/resource/BaseTexture.ts"
-  ]
-}
