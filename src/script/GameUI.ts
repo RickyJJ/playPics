@@ -7,6 +7,8 @@ import SayingVO from "../model/SayingVO";
 import { Point } from "laya/maths/Point";
 import { AudioSound } from "laya/media/h5audio/AudioSound";
 import { SoundManager } from "laya/media/SoundManager";
+import { Text } from "laya/display/Text";
+import { Pool } from "laya/utils/Pool";
 /**
  * 本示例采用非脚本的方式实现，而使用继承页面基类，实现页面逻辑。在IDE里面设置场景的Runtime属性即可和场景进行关联
  * 相比脚本方式，继承式页面类，可以直接使用页面定义的属性（通过IDE内var属性定义），比如this.tipLbll，this.scoreLbl，具有代码提示效果
@@ -62,6 +64,15 @@ export default class GameUI extends ui.test.TestSceneUI {
     initStartSaying(): void {
         let self = this
         this.startSaying = []
+        let say1 = new  Text();
+        let say2 = new Text();
+        let say3 = new Text(), say4 = new Text(), say5 = new Text();
+        say1.text = "我要道歉";
+        say2.text = "因为我"
+        say3.text = "愚蠢", say4.text = "自私", say5.text = "冷落"
+        say1.pos(150, 200)
+
+
         this.startSaying.push(SayingVO.say("首先我要说声对不起\n因为我这段时间", new Point(150, 200)))
      }
 
