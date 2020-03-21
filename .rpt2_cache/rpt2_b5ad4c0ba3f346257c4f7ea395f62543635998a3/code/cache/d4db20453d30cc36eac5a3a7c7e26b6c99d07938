@@ -1,0 +1,8 @@
+{
+  "code": "import { Pool } from \"../../utils/Pool\";\r\nexport class DrawImageCmd {\r\n    static create(texture, x, y, width, height) {\r\n        var cmd = Pool.getItemByClass(\"DrawImageCmd\", DrawImageCmd);\r\n        cmd.texture = texture;\r\n        texture._addReference();\r\n        cmd.x = x;\r\n        cmd.y = y;\r\n        cmd.width = width;\r\n        cmd.height = height;\r\n        return cmd;\r\n    }\r\n    recover() {\r\n        this.texture && this.texture._removeReference();\r\n        this.texture = null;\r\n        Pool.recover(\"DrawImageCmd\", this);\r\n    }\r\n    run(context, gx, gy) {\r\n        if (this.texture)\r\n            context.drawTexture(this.texture, this.x + gx, this.y + gy, this.width, this.height);\r\n    }\r\n    get cmdID() {\r\n        return DrawImageCmd.ID;\r\n    }\r\n}\r\nDrawImageCmd.ID = \"DrawImage\";\r\n",
+  "references": [
+    "D:/MySpace/Projects/NextPresent/PresentNext/libs/laya/resource/Context.ts",
+    "D:/MySpace/Projects/NextPresent/PresentNext/libs/laya/resource/Texture.ts",
+    "D:/MySpace/Projects/NextPresent/PresentNext/libs/laya/utils/Pool.ts"
+  ]
+}

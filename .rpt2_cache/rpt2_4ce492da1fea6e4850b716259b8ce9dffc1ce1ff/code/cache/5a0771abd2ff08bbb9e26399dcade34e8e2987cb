@@ -1,0 +1,6 @@
+{
+  "code": "import { Resource } from \"./Resource\";\r\nexport class Bitmap extends Resource {\r\n    get width() {\r\n        return this._width;\r\n    }\r\n    set width(width) {\r\n        this._width = width;\r\n    }\r\n    get height() {\r\n        return this._height;\r\n    }\r\n    set height(height) {\r\n        this._height = height;\r\n    }\r\n    constructor() {\r\n        super();\r\n        this._width = -1;\r\n        this._height = -1;\r\n    }\r\n    _getSource() {\r\n        throw \"Bitmap: must override it.\";\r\n    }\r\n}\r\n",
+  "references": [
+    "D:/MySpace/Projects/NextPresent/PresentNext/libs/laya/resource/Resource.ts"
+  ]
+}

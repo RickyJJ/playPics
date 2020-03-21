@@ -1,0 +1,10 @@
+{
+  "code": "import { ui } from \"./../ui/layaMaxUI\";\r\nimport GameControl from \"./GameControl\";\r\nimport { MouseManager } from \"laya/events/MouseManager\";\r\nimport { Event } from \"laya/events/Event\";\r\nimport { Laya } from \"Laya\";\r\nexport default class GameUI extends ui.test.TestSceneUI {\r\n    constructor() {\r\n        super();\r\n        Laya.stage.width = 1080;\r\n        Laya.stage.height = 1920;\r\n        Laya.stage.alignH = Laya.Stage.ALIGN_CENTER;\r\n        Laya.stage.alignV = Laya.Stage.ALIGN_MIDDLE;\r\n        Laya.stage.scaleMode = Laya.Stage.SCALE_EXACTFIT;\r\n        Laya.stage.screenMode = Laya.Stage.SCREEN_VERTICAL;\r\n        GameUI.instance = this;\r\n        MouseManager.multiTouchEnabled = false;\r\n    }\r\n    onEnable() {\r\n        this._control = this.getComponent(GameControl);\r\n        this.pics.on(Event.CLICK, this, this.onPicsClick);\r\n    }\r\n    onPicsClick(e) {\r\n        let nickName = \"你是我要找的人\";\r\n        this.question.text = \"确认过眼神，你是\\n\" + nickName + \" ?\";\r\n        this.question.fontSize = 60;\r\n        this.question.color = '#ffffff';\r\n        this.question.zOrder = 1;\r\n    }\r\n    onTipClick(e) {\r\n    }\r\n    stopGame() {\r\n    }\r\n}\r\n",
+  "references": [
+    "D:/MySpace/Projects/NextPresent/PresentNext/src/ui/layaMaxUI.ts",
+    "D:/MySpace/Projects/NextPresent/PresentNext/src/script/GameControl.ts",
+    "D:/MySpace/Projects/NextPresent/PresentNext/libs/laya/events/MouseManager.ts",
+    "D:/MySpace/Projects/NextPresent/PresentNext/libs/laya/events/Event.ts",
+    "D:/MySpace/Projects/NextPresent/PresentNext/libs/Laya.ts"
+  ]
+}

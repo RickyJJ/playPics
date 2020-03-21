@@ -1,0 +1,7 @@
+{
+  "code": "import { Pool } from \"../../utils/Pool\";\r\nexport class DrawPieCmd {\r\n    static create(x, y, radius, startAngle, endAngle, fillColor, lineColor, lineWidth, vid) {\r\n        var cmd = Pool.getItemByClass(\"DrawPieCmd\", DrawPieCmd);\r\n        cmd.x = x;\r\n        cmd.y = y;\r\n        cmd.radius = radius;\r\n        cmd._startAngle = startAngle;\r\n        cmd._endAngle = endAngle;\r\n        cmd.fillColor = fillColor;\r\n        cmd.lineColor = lineColor;\r\n        cmd.lineWidth = lineWidth;\r\n        cmd.vid = vid;\r\n        return cmd;\r\n    }\r\n    recover() {\r\n        this.fillColor = null;\r\n        this.lineColor = null;\r\n        Pool.recover(\"DrawPieCmd\", this);\r\n    }\r\n    run(context, gx, gy) {\r\n        context._drawPie(this.x + gx, this.y + gy, this.radius, this._startAngle, this._endAngle, this.fillColor, this.lineColor, this.lineWidth, this.vid);\r\n    }\r\n    get cmdID() {\r\n        return DrawPieCmd.ID;\r\n    }\r\n    get startAngle() {\r\n        return this._startAngle * 180 / Math.PI;\r\n    }\r\n    set startAngle(value) {\r\n        this._startAngle = value * Math.PI / 180;\r\n    }\r\n    get endAngle() {\r\n        return this._endAngle * 180 / Math.PI;\r\n    }\r\n    set endAngle(value) {\r\n        this._endAngle = value * Math.PI / 180;\r\n    }\r\n}\r\nDrawPieCmd.ID = \"DrawPie\";\r\n",
+  "references": [
+    "D:/MySpace/Projects/NextPresent/PresentNext/libs/laya/resource/Context.ts",
+    "D:/MySpace/Projects/NextPresent/PresentNext/libs/laya/utils/Pool.ts"
+  ]
+}

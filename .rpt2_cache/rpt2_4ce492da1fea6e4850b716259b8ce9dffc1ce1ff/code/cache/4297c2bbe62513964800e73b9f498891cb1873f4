@@ -1,0 +1,8 @@
+{
+  "code": "import { Event } from \"../events/Event\";\r\nimport { ILaya } from \"../../ILaya\";\r\nimport { ClassUtils } from \"../utils/ClassUtils\";\r\nexport class UIEvent extends Event {\r\n}\r\nUIEvent.SHOW_TIP = \"showtip\";\r\nUIEvent.HIDE_TIP = \"hidetip\";\r\nILaya.regClass(UIEvent);\r\nClassUtils.regClass(\"laya.ui.UIEvent\", UIEvent);\r\nClassUtils.regClass(\"Laya.UIEvent\", UIEvent);\r\n",
+  "references": [
+    "D:/MySpace/Projects/NextPresent/PresentNext/libs/laya/events/Event.ts",
+    "D:/MySpace/Projects/NextPresent/PresentNext/libs/ILaya.ts",
+    "D:/MySpace/Projects/NextPresent/PresentNext/libs/laya/utils/ClassUtils.ts"
+  ]
+}

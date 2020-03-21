@@ -1,0 +1,4 @@
+{
+  "code": "export class Styles {\r\n}\r\nStyles.defaultSizeGrid = [4, 4, 4, 4, 0];\r\nStyles.labelColor = \"#000000\";\r\nStyles.labelPadding = [2, 2, 2, 2];\r\nStyles.inputLabelPadding = [1, 1, 1, 3];\r\nStyles.buttonStateNum = 3;\r\nStyles.buttonLabelColors = [\"#32556b\", \"#32cc6b\", \"#ff0000\", \"#C0C0C0\"];\r\nStyles.comboBoxItemColors = [\"#5e95b6\", \"#ffffff\", \"#000000\", \"#8fa4b1\", \"#ffffff\"];\r\nStyles.scrollBarMinNum = 15;\r\nStyles.scrollBarDelayTime = 500;\r\n",
+  "references": []
+}

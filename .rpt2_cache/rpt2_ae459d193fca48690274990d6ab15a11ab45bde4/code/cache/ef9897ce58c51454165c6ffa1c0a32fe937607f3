@@ -1,0 +1,6 @@
+{
+  "code": "import { ILaya } from \"../../ILaya\";\r\nexport class Prefab {\r\n    create() {\r\n        if (this.json)\r\n            return ILaya.SceneUtils.createByData(null, this.json);\r\n        return null;\r\n    }\r\n}\r\n",
+  "references": [
+    "D:/MySpace/Projects/NextPresent/PresentNext/libs/ILaya.ts"
+  ]
+}

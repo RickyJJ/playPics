@@ -1,0 +1,7 @@
+{
+  "code": "import { Pool } from \"../../utils/Pool\";\r\nexport class ScaleCmd {\r\n    static create(scaleX, scaleY, pivotX, pivotY) {\r\n        var cmd = Pool.getItemByClass(\"ScaleCmd\", ScaleCmd);\r\n        cmd.scaleX = scaleX;\r\n        cmd.scaleY = scaleY;\r\n        cmd.pivotX = pivotX;\r\n        cmd.pivotY = pivotY;\r\n        return cmd;\r\n    }\r\n    recover() {\r\n        Pool.recover(\"ScaleCmd\", this);\r\n    }\r\n    run(context, gx, gy) {\r\n        context._scale(this.scaleX, this.scaleY, this.pivotX + gx, this.pivotY + gy);\r\n    }\r\n    get cmdID() {\r\n        return ScaleCmd.ID;\r\n    }\r\n}\r\nScaleCmd.ID = \"Scale\";\r\n",
+  "references": [
+    "D:/MySpace/Projects/NextPresent/PresentNext/libs/laya/resource/Context.ts",
+    "D:/MySpace/Projects/NextPresent/PresentNext/libs/laya/utils/Pool.ts"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "code": "import { Pool } from \"../../utils/Pool\";\r\nexport class TranslateCmd {\r\n    static create(tx, ty) {\r\n        var cmd = Pool.getItemByClass(\"TranslateCmd\", TranslateCmd);\r\n        cmd.tx = tx;\r\n        cmd.ty = ty;\r\n        return cmd;\r\n    }\r\n    recover() {\r\n        Pool.recover(\"TranslateCmd\", this);\r\n    }\r\n    run(context, gx, gy) {\r\n        context.translate(this.tx, this.ty);\r\n    }\r\n    get cmdID() {\r\n        return TranslateCmd.ID;\r\n    }\r\n}\r\nTranslateCmd.ID = \"Translate\";\r\n",
+  "references": [
+    "D:/MySpace/Projects/NextPresent/PresentNext/libs/laya/resource/Context.ts",
+    "D:/MySpace/Projects/NextPresent/PresentNext/libs/laya/utils/Pool.ts"
+  ]
+}

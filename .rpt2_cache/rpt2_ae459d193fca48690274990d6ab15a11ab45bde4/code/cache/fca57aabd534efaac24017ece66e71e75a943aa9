@@ -1,0 +1,8 @@
+{
+  "code": "import { Pool } from \"../../utils/Pool\";\r\nexport class TransformCmd {\r\n    static create(matrix, pivotX, pivotY) {\r\n        var cmd = Pool.getItemByClass(\"TransformCmd\", TransformCmd);\r\n        cmd.matrix = matrix;\r\n        cmd.pivotX = pivotX;\r\n        cmd.pivotY = pivotY;\r\n        return cmd;\r\n    }\r\n    recover() {\r\n        this.matrix = null;\r\n        Pool.recover(\"TransformCmd\", this);\r\n    }\r\n    run(context, gx, gy) {\r\n        context._transform(this.matrix, this.pivotX + gx, this.pivotY + gy);\r\n    }\r\n    get cmdID() {\r\n        return TransformCmd.ID;\r\n    }\r\n}\r\nTransformCmd.ID = \"Transform\";\r\n",
+  "references": [
+    "D:/MySpace/Projects/NextPresent/PresentNext/libs/laya/maths/Matrix.ts",
+    "D:/MySpace/Projects/NextPresent/PresentNext/libs/laya/resource/Context.ts",
+    "D:/MySpace/Projects/NextPresent/PresentNext/libs/laya/utils/Pool.ts"
+  ]
+}

@@ -1,0 +1,4 @@
+{
+  "code": "export class SpriteConst {\r\n}\r\nSpriteConst.ALPHA = 0x01;\r\nSpriteConst.TRANSFORM = 0x02;\r\nSpriteConst.BLEND = 0x04;\r\nSpriteConst.CANVAS = 0x08;\r\nSpriteConst.FILTERS = 0x10;\r\nSpriteConst.MASK = 0x20;\r\nSpriteConst.CLIP = 0x40;\r\nSpriteConst.STYLE = 0x80;\r\nSpriteConst.TEXTURE = 0x100;\r\nSpriteConst.GRAPHICS = 0x200;\r\nSpriteConst.LAYAGL3D = 0x400;\r\nSpriteConst.CUSTOM = 0x800;\r\nSpriteConst.ONECHILD = 0x1000;\r\nSpriteConst.CHILDS = 0x2000;\r\nSpriteConst.REPAINT_NONE = 0;\r\nSpriteConst.REPAINT_NODE = 0x01;\r\nSpriteConst.REPAINT_CACHE = 0x02;\r\nSpriteConst.REPAINT_ALL = 0x03;\r\n",
+  "references": []
+}

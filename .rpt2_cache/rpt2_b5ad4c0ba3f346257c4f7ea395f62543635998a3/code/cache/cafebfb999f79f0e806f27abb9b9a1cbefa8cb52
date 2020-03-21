@@ -1,0 +1,7 @@
+{
+  "code": "export class IPhysics {\r\n}\r\nIPhysics.RigidBody = null;\r\nIPhysics.Physics = null;\r\n",
+  "references": [
+    "D:/MySpace/Projects/NextPresent/PresentNext/libs/laya/physics/RigidBody.ts",
+    "D:/MySpace/Projects/NextPresent/PresentNext/libs/laya/physics/Physics.ts"
+  ]
+}

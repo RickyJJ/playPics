@@ -1,0 +1,7 @@
+{
+  "code": "import { Pool } from \"../../utils/Pool\";\r\nexport class RotateCmd {\r\n    static create(angle, pivotX, pivotY) {\r\n        var cmd = Pool.getItemByClass(\"RotateCmd\", RotateCmd);\r\n        cmd.angle = angle;\r\n        cmd.pivotX = pivotX;\r\n        cmd.pivotY = pivotY;\r\n        return cmd;\r\n    }\r\n    recover() {\r\n        Pool.recover(\"RotateCmd\", this);\r\n    }\r\n    run(context, gx, gy) {\r\n        context._rotate(this.angle, this.pivotX + gx, this.pivotY + gy);\r\n    }\r\n    get cmdID() {\r\n        return RotateCmd.ID;\r\n    }\r\n}\r\nRotateCmd.ID = \"Rotate\";\r\n",
+  "references": [
+    "D:/MySpace/Projects/NextPresent/PresentNext/libs/laya/resource/Context.ts",
+    "D:/MySpace/Projects/NextPresent/PresentNext/libs/laya/utils/Pool.ts"
+  ]
+}

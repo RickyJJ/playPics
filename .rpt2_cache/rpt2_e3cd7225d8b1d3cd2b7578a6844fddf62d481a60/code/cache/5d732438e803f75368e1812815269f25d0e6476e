@@ -1,0 +1,9 @@
+{
+  "code": "import { Pool } from \"../../utils/Pool\";\r\nexport class FillTextureCmd {\r\n    static create(texture, x, y, width, height, type, offset, other) {\r\n        var cmd = Pool.getItemByClass(\"FillTextureCmd\", FillTextureCmd);\r\n        cmd.texture = texture;\r\n        cmd.x = x;\r\n        cmd.y = y;\r\n        cmd.width = width;\r\n        cmd.height = height;\r\n        cmd.type = type;\r\n        cmd.offset = offset;\r\n        cmd.other = other;\r\n        return cmd;\r\n    }\r\n    recover() {\r\n        this.texture = null;\r\n        this.offset = null;\r\n        this.other = null;\r\n        Pool.recover(\"FillTextureCmd\", this);\r\n    }\r\n    run(context, gx, gy) {\r\n        context.fillTexture(this.texture, this.x + gx, this.y + gy, this.width, this.height, this.type, this.offset, this.other);\r\n    }\r\n    get cmdID() {\r\n        return FillTextureCmd.ID;\r\n    }\r\n}\r\nFillTextureCmd.ID = \"FillTexture\";\r\n",
+  "references": [
+    "D:/MySpace/Projects/NextPresent/PresentNext/libs/laya/maths/Point.ts",
+    "D:/MySpace/Projects/NextPresent/PresentNext/libs/laya/resource/Context.ts",
+    "D:/MySpace/Projects/NextPresent/PresentNext/libs/laya/resource/Texture.ts",
+    "D:/MySpace/Projects/NextPresent/PresentNext/libs/laya/utils/Pool.ts"
+  ]
+}

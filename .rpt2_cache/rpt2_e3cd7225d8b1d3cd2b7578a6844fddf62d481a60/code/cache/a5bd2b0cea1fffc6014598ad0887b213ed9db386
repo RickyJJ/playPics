@@ -1,0 +1,9 @@
+{
+  "code": "import { Script } from \"laya/components/Script\";\r\nimport { Pool } from \"laya/utils/Pool\";\r\nimport { RigidBody } from \"laya/physics/RigidBody\";\r\nexport default class Bullet extends Script {\r\n    constructor() { super(); }\r\n    onEnable() {\r\n        var rig = this.owner.getComponent(RigidBody);\r\n        rig.setVelocity({ x: 0, y: -10 });\r\n    }\r\n    onTriggerEnter(other, self, contact) {\r\n        this.owner.removeSelf();\r\n    }\r\n    onUpdate() {\r\n        if (this.owner.y < -10) {\r\n            this.owner.removeSelf();\r\n        }\r\n    }\r\n    onDisable() {\r\n        Pool.recover(\"bullet\", this.owner);\r\n    }\r\n}\r\n",
+  "references": [
+    "D:/MySpace/Projects/NextPresent/PresentNext/libs/laya/components/Script.ts",
+    "D:/MySpace/Projects/NextPresent/PresentNext/libs/laya/display/Sprite.ts",
+    "D:/MySpace/Projects/NextPresent/PresentNext/libs/laya/utils/Pool.ts",
+    "D:/MySpace/Projects/NextPresent/PresentNext/libs/laya/physics/RigidBody.ts"
+  ]
+}

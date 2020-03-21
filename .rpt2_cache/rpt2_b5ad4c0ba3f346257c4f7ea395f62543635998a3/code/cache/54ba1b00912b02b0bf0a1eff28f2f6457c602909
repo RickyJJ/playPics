@@ -1,0 +1,7 @@
+{
+  "code": "import { Pool } from \"../../utils/Pool\";\r\nexport class DrawRectCmd {\r\n    static create(x, y, width, height, fillColor, lineColor, lineWidth) {\r\n        var cmd = Pool.getItemByClass(\"DrawRectCmd\", DrawRectCmd);\r\n        cmd.x = x;\r\n        cmd.y = y;\r\n        cmd.width = width;\r\n        cmd.height = height;\r\n        cmd.fillColor = fillColor;\r\n        cmd.lineColor = lineColor;\r\n        cmd.lineWidth = lineWidth;\r\n        return cmd;\r\n    }\r\n    recover() {\r\n        this.fillColor = null;\r\n        this.lineColor = null;\r\n        Pool.recover(\"DrawRectCmd\", this);\r\n    }\r\n    run(context, gx, gy) {\r\n        context.drawRect(this.x + gx, this.y + gy, this.width, this.height, this.fillColor, this.lineColor, this.lineWidth);\r\n    }\r\n    get cmdID() {\r\n        return DrawRectCmd.ID;\r\n    }\r\n}\r\nDrawRectCmd.ID = \"DrawRect\";\r\n",
+  "references": [
+    "D:/MySpace/Projects/NextPresent/PresentNext/libs/laya/resource/Context.ts",
+    "D:/MySpace/Projects/NextPresent/PresentNext/libs/laya/utils/Pool.ts"
+  ]
+}

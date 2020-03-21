@@ -1,0 +1,6 @@
+{
+  "code": "import { ColorUtils } from \"../../utils/ColorUtils\";\r\nexport class DrawStyle {\r\n    constructor(value) {\r\n        this.setValue(value);\r\n    }\r\n    static create(value) {\r\n        if (value) {\r\n            var color = (value instanceof ColorUtils) ? value : ColorUtils.create(value);\r\n            return color._drawStyle || (color._drawStyle = new DrawStyle(value));\r\n        }\r\n        return DrawStyle.DEFAULT;\r\n    }\r\n    setValue(value) {\r\n        if (value) {\r\n            this._color = (value instanceof ColorUtils) ? value : ColorUtils.create(value);\r\n        }\r\n        else\r\n            this._color = ColorUtils.create(\"#000000\");\r\n    }\r\n    reset() {\r\n        this._color = ColorUtils.create(\"#000000\");\r\n    }\r\n    toInt() {\r\n        return this._color.numColor;\r\n    }\r\n    equal(value) {\r\n        if (typeof (value) == 'string')\r\n            return this._color.strColor === value;\r\n        if (value instanceof ColorUtils)\r\n            return this._color.numColor === value.numColor;\r\n        return false;\r\n    }\r\n    toColorStr() {\r\n        return this._color.strColor;\r\n    }\r\n}\r\nDrawStyle.DEFAULT = new DrawStyle(\"#000000\");\r\n",
+  "references": [
+    "D:/MySpace/Projects/NextPresent/PresentNext/libs/laya/utils/ColorUtils.ts"
+  ]
+}

@@ -1,0 +1,4 @@
+{
+  "code": "export class RenderInfo {\r\n}\r\nRenderInfo.loopStTm = 0;\r\nRenderInfo.loopCount = 0;\r\n",
+  "references": []
+}

@@ -1,0 +1,10 @@
+{
+  "code": "import { Scene } from \"laya/display/Scene\";\r\nimport { ClassUtils } from \"laya/utils/ClassUtils\";\r\nvar REG = ClassUtils.regClass;\r\nimport { Text } from \"laya/display/Text\";\r\nimport { Image } from \"laya/ui/Image\";\r\nimport { Sprite } from \"laya/display/Sprite\";\r\nexport var ui;\r\n(function (ui) {\r\n    var test;\r\n    (function (test) {\r\n        class TestSceneUI extends Scene {\r\n            constructor() {\r\n                super();\r\n                this.referenceClass = [Text, Image, Sprite];\r\n            }\r\n            createChildren() {\r\n                super.createChildren();\r\n                this.loadScene(\"test/TestScene\");\r\n            }\r\n        }\r\n        test.TestSceneUI = TestSceneUI;\r\n        REG(\"ui.test.TestSceneUI\", TestSceneUI);\r\n    })(test = ui.test || (ui.test = {}));\r\n})(ui || (ui = {}));\r\n",
+  "references": [
+    "D:/MySpace/Projects/NextPresent/PresentNext/libs/laya/display/Scene.ts",
+    "D:/MySpace/Projects/NextPresent/PresentNext/libs/laya/utils/ClassUtils.ts",
+    "D:/MySpace/Projects/NextPresent/PresentNext/libs/laya/display/Text.ts",
+    "D:/MySpace/Projects/NextPresent/PresentNext/libs/laya/ui/Image.ts",
+    "D:/MySpace/Projects/NextPresent/PresentNext/libs/laya/display/Sprite.ts"
+  ]
+}
