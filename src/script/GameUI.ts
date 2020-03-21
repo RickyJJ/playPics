@@ -63,7 +63,7 @@ export default class GameUI extends ui.test.TestSceneUI {
         let self = this
         this.startSaying = []
         this.startSaying.push(SayingVO.say("首先我要说声对不起\n因为我这段时间", new Point(150, 200)))
-    }
+     }
 
     initPicsPath(): void {
         this.paths = []
@@ -80,17 +80,23 @@ export default class GameUI extends ui.test.TestSceneUI {
         this.paths.push(SayingVO.say("让我把你教会吧", new Point(50, 50), "test/bike3.jpg", true))
     }
 
+    playPics() {
+        if (this.sayingIndex >= this.paths.length) {
+            this.sayingIndex = 0
+        }
+
+        this.togglePics(this.paths[this.sayingIndex])
+
+        this.sayingIndex++;
+    }
+
     onEnable(): void {
         this._control = this.getComponent(GameControl);
         this.pics.on(Event.CLICK, this, this.togglePics)
     }
 
-    togglePics(e: Event): void {
-        if (this.sayingIndex >= this.paths.length) {
-            this.sayingIndex = 0
-        }
-
-        let sayingVO = this.paths[this.sayingIndex]
+    togglePics(say: SayingVO): void {
+        let sayingVO = say
 
         if (sayingVO.isTogglePic && sayingVO.picPath != null) {
             this.pics.graphics.clear()
@@ -106,8 +112,6 @@ export default class GameUI extends ui.test.TestSceneUI {
 
         this.question.fontSize = 60;
         this.question.color = '#ffffff'
-
-        this.sayingIndex++;
 
     }
 
