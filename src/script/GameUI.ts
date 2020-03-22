@@ -1,5 +1,4 @@
 import { ui } from "./../ui/layaMaxUI";
-import GameControl from "./GameControl"
 import { MouseManager } from "laya/events/MouseManager";
 import { Event } from "laya/events/Event";
 import { Laya, timer } from "Laya";
@@ -21,10 +20,6 @@ export default class GameUI extends ui.test.TestSceneUI {
 
     /**设置单例的引用方式，方便其他类引用 */
     static instance: GameUI;
-    /**当前游戏积分字段 */
-    private _score: number;
-    /**游戏控制脚本引用，避免每次获取组件带来不必要的性能开销 */
-    private _control: GameControl;
 
     /**
      * 记录已循环的次数
@@ -82,7 +77,6 @@ export default class GameUI extends ui.test.TestSceneUI {
     }
 
     onEnable(): void {
-        this._control = this.getComponent(GameControl);
         // this.pics.on(Event.CLICK, this, this.togglePics)
     }
 
