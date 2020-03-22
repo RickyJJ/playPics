@@ -95,7 +95,7 @@ export default class GameUI extends ui.test.TestSceneUI {
     playMusic(index: number): any {
         let music: string
         if (index == 1) {
-            music = "sound/background_starter.mp3"
+            music = "sound/background_start.mp3"
         } else {
             music = "sound/background.mp3"
         }
